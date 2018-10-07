@@ -1,0 +1,174 @@
+\documentclass{article}
+% Packages
+\usepackage{titling}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{scrextend}
+\usepackage{graphicx, lipsum}
+\usepackage[style=authoryear]{biblatex}
+\usepackage{xcolor}
+\usepackage{perpage}
+
+% Colors
+\definecolor{light-gray}{gray}{0.85}
+\definecolor{light-blue}{HTML}{444455}
+
+% Formatting
+\geometry{						% Page Margin
+	top		= .1in,
+	bottom	= .1in,
+	left	= .1in,
+	right	= .65in
+	}
+\titleformat{\section}[frame]	% Section
+	{\huge}
+	{}
+	{.25em}
+	{\lowercase}
+\titleformat{\subsection}		% Sub Section
+	{\bfseries\large}
+	{}
+	{.5em}
+	{}[\titlerule]
+\titlespacing{\subsection}		% Sub Section Spacing
+	{0em}
+	{.5em}
+	{1em}
+\titleformat{\subsubsection}	% Sub Sub Section
+	{\bfseries\large}
+	{}
+	{.5em}
+	{}
+\titlespacing{\subsubsection}	% Sub Sub Section Spacing
+	{-.5em}
+	{0em}
+	{.5em}
+\MakePerPage{footnote}
+
+% Personal Information
+\title{Business Title}
+\author{Your Name}
+\date{\today}
+\newcommand{\phone}	{(000) 000-0000}
+\newcommand{\email}	{your@email.com}
+\newcommand{\site}	{www.yoursite.com}
+\newcommand{\git}	{github.com/your-repository}
+
+% License information
+\newcommand{\license}
+{\footnote{This resume is licensed under the GNU General Public License and is available @ github.com/polygon-studio/LaTeX-Resume-CV-Template}}
+
+% Title Formatting
+\renewcommand{\maketitle}{
+	\begin{center}{
+		\bfseries
+		\huge
+		\theauthor	\\
+		\thetitle	\\
+		\vspace{.15em}
+	}
+	\email | \site
+	\end{center}
+}
+
+% CV Content
+\begin{document}
+	% Add a colored box to the title text
+	\colorbox{light-blue}{
+	\textcolor{white}{
+	\parbox[t]{\textwidth}{
+		\maketitle
+	}}}\license
+	
+	% Change the color of the side panel
+	\fcolorbox{black}{light-gray}{
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% SIDE CONTENT					 %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{minipage}[t]{.32\textwidth}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\section{Contact Info}
+			\begin{tabular}{l l}
+				Phone: 		& \phone		\\
+				E-Mail: 	& \email		\\
+				Website: 	& \site			\\
+				Github:		& \git			\\\\
+			\end{tabular}
+			
+		\section{Technical Skills}
+			\subsection{$Languages$}
+			\subsubsection{Programming}
+				\begin{tabular}{l l}
+					ALGOL	& ADA			\\
+					QBasic	& FORTRAN		\\\\
+				\end{tabular}
+				
+			\subsubsection{APIs}
+				\begin{tabular}{l l}
+					DirectX	& Metal			\\
+					Glide3D	& PasVulkan		\\\\
+				\end{tabular}
+				
+			\subsubsection{Markup}
+				\begin{tabular}{l l}
+					\TeX	& Con\TeX		\\
+					\LaTeX	& AMS\TeX		\\\\
+				\end{tabular}
+				
+			\subsection{$Software$}
+			\subsubsection{Engines}
+				\begin{tabular}{l l}
+					Gamestudio A7 & Renderware	\\\\		
+				\end{tabular}
+				
+			\subsubsection{3D}
+				\begin{tabular}{l l}
+					TruSpace 	& Milkshape		\\
+					Anim8r		& Rhino			\\\\
+				\end{tabular}
+				
+		\section{Languages}
+			\begin{tabular}{l l}
+					Korean						\\
+					Gaelic						\\			
+			\end{tabular}
+			
+		\section{Hobbies}
+			\begin{tabular}{l l}
+				Bowling			& Yoga		\\
+				Oscillating		& DEADBEEF	\\
+			\end{tabular}
+	\end{minipage}}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% MAIN CONTENT							 %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{minipage}[t]{.675\textwidth}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% WORK EXPERIENCE                    %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\section{Experience}
+			\begin{tabular}{l | l}
+				1972 | 1988 & Janitor $Tech Co.$
+			\end{tabular}\titlerule\\
+			
+			\begin{quote}			
+				% Put some experience here
+				
+				Developed mopping algorithms to achieve a space time cleanliness of $O(logn)$
+			\end{quote}
+			
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% EDUCATION							 %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\section{Education}
+			\begin{tabular}{l | l}
+				1952 | Present & Wossamotta U \textsc{PhD} $Oh the Humanities$\par			
+			\end{tabular}\titlerule\\
+
+			\begin{quote}
+				% Put your education highlights here				
+				
+				Was that kid who brought his Gameboy to school.
+			\end{quote}						
+	\end{minipage}
+\end{document}
